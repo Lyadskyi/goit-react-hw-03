@@ -1,0 +1,33 @@
+.container {
+  display: flex;
+  align-items: center;
+  border-radius: 4px;
+  gap: 150px;
+  border: 2px solid #000;
+  border-radius: 6px;
+  padding: 10px;
+  width: fit-content;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  background: #fdedec;
+}
+
+.userData {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.desc {
+  font-size: 28px;
+}
+
+.btn {
+  font-size: 25px;
+  border-radius: 4px;
+  padding: 8px;
+}
+
+.btn:hover {
+  scale: 1.03;
+  color: #f21212;
+}
