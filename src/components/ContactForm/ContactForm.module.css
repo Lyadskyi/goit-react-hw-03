@@ -1,0 +1,24 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 400px;
+  margin-bottom: 30px;
+}
+
+.input {
+  font-size: 25px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  border-color: blueviolet;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  background: #ebf5fb;
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  font-size: 25px;
+  border-radius: 4px;
+  padding: 6px 10px;
+}

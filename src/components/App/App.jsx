@@ -1,4 +1,5 @@
 // Import components
+import ContactForm from "../ContactForm/ContactForm";
 import SearchBox from "../SearchBox/SearchBox";
 import ContactList from "../ContactList/ContactList";
 
@@ -15,6 +16,12 @@ export default function App() {
   const [contacts, setContacts] = useState(initialContacts);
   const [search, setSearch] = useState("");
 
+  const addContact = (newContact) => {
+    setContacts((prevContacts) => {
+      return [...prevContacts, newContact];
+    });
+  };
+
   const deleteContact = (contactId) => {
     setContacts((prevContacts) => {
       return prevContacts.filter((contact) => contact.id !== contactId);
@@ -28,6 +35,7 @@ export default function App() {
   return (
     <div className={css.container}>
       <h1 className={css.title}>Phonebook</h1>
+      <ContactForm onAdd={addContact} />
       <SearchBox value={search} onSearch={setSearch} />
       <ContactList contacts={visibleContacts} onDelete={deleteContact} />
     </div>
