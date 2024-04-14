@@ -2,7 +2,7 @@ import { IoIosContact } from "react-icons/io";
 import { HiOutlinePhone } from "react-icons/hi";
 import css from "./Contact.module.css";
 
-export default function Contact({ data: { name, number } }) {
+export default function Contact({ data: { id, name, number }, onDelete }) {
   return (
     <div className={css.container}>
       <div>
@@ -15,7 +15,9 @@ export default function Contact({ data: { name, number } }) {
           <p className={css.desc}>{number}</p>
         </div>
       </div>
-      <button className={css.btn}>Delete</button>
+      <button className={css.btn} onClick={() => onDelete(id)}>
+        Delete
+      </button>
     </div>
   );
 }
