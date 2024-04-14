@@ -1,4 +1,5 @@
 // Import components
+import SearchBox from "../SearchBox/SearchBox";
 import ContactList from "../ContactList/ContactList";
 
 // Import hook
@@ -12,6 +13,7 @@ import css from "./App.module.css";
 
 export default function App() {
   const [contacts, setContacts] = useState(initialContacts);
+  const [search, setSearch] = useState("");
 
   const deleteContact = (contactId) => {
     setContacts((prevContacts) => {
@@ -19,10 +21,15 @@ export default function App() {
     });
   };
 
+  const visibleContacts = contacts.filter((contact) =>
+    contact.name.toLowerCase().includes(search.toLowerCase())
+  );
+
   return (
     <div className={css.container}>
       <h1 className={css.title}>Phonebook</h1>
-      <ContactList contacts={contacts} onDelete={deleteContact} />
+      <SearchBox value={search} onSearch={setSearch} />
+      <ContactList contacts={visibleContacts} onDelete={deleteContact} />
     </div>
   );
 }
