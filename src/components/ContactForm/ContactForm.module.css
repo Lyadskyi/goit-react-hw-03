@@ -1,8 +1,12 @@
 .form {
   display: flex;
+  width: fit-content;
   flex-direction: column;
+  border: 1px solid #000;
   gap: 15px;
-  width: 400px;
+  padding: 20px 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
   margin-bottom: 30px;
 }
 
@@ -10,15 +14,24 @@
   font-size: 25px;
   padding: 6px 10px;
   border-radius: 6px;
-  border-color: blueviolet;
+  border-color: #abebc6;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  background: #ebf5fb;
+  background: #eafaf1;
 }
 
 .btn {
-  display: flex;
-  justify-content: center;
-  font-size: 25px;
+  font-size: 20px;
   border-radius: 4px;
   padding: 6px 10px;
+}
+
+button {
+  margin: 0 auto;
+  display: block;
+}
+
+.btn:hover {
+  /* scale: 1.03; */
+  color: #9b59b6;
+  background-color: #abebc6;
 }

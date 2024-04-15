@@ -1,5 +1,5 @@
 import { IoIosContact } from "react-icons/io";
-import { HiOutlinePhone } from "react-icons/hi";
+import { AiTwotonePhone } from "react-icons/ai";
 import css from "./Contact.module.css";
 
 export default function Contact({ data: { id, name, number }, onDelete }) {
@@ -11,7 +11,7 @@ export default function Contact({ data: { id, name, number }, onDelete }) {
           <p className={css.desc}>{name}</p>
         </div>
         <div className={css.userData}>
-          <HiOutlinePhone size={40} />
+          <AiTwotonePhone size={40} />
           <p className={css.desc}>{number}</p>
         </div>
       </div>
