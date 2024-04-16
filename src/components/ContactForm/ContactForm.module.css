@@ -31,7 +31,14 @@ button {
 }
 
 .btn:hover {
-  /* scale: 1.03; */
   color: #9b59b6;
   background-color: #abebc6;
+}
+
+input::placeholder {
+  font-size: 20px;
+}
+
+span {
+  color: #ff0808;
 }

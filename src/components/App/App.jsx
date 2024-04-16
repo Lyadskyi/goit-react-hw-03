@@ -1,10 +1,10 @@
+// Import hooks
+import { useState, useEffect } from "react";
+
 // Import components
 import ContactForm from "../ContactForm/ContactForm";
 import SearchBox from "../SearchBox/SearchBox";
 import ContactList from "../ContactList/ContactList";
-
-// Import hook
-import { useState } from "react";
 
 // Import json
 import initialContacts from "../../contacts.json";
@@ -13,8 +13,15 @@ import initialContacts from "../../contacts.json";
 import css from "./App.module.css";
 
 export default function App() {
-  const [contacts, setContacts] = useState(initialContacts);
   const [search, setSearch] = useState("");
+  const [contacts, setContacts] = useState(() => {
+    const savedContacts = localStorage.getItem("contacts");
+    return savedContacts !== null ? JSON.parse(savedContacts) : initialContacts;
+  });
+
+  useEffect(() => {
+    localStorage.setItem("contacts", JSON.stringify(contacts));
+  }, [contacts]);
 
   const addContact = (newContact) => {
     setContacts((prevContacts) => {
